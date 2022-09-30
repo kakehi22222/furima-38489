@@ -44,6 +44,7 @@ Things you may want to cover:
 - has_many :purchases
 - has_one :shipping-address
 
+
 ## items テーブル
 
 | Column         | Type       | Options                         |
@@ -61,11 +62,11 @@ Things you may want to cover:
 
 - belongs_to :user
 - has_one :purchase
-- belongs_to_active_hash :category
-- belongs_to_active_hash :condition
-- belongs_to_active_hash :cost-burden
-- belongs_to_active_hash :prefectures
-- belongs_to_active_hash :aim
+- belongs_to_active_hash :category_id
+- belongs_to_active_hash :condition_id
+- belongs_to_active_hash :cost-burden_id
+- belongs_to_active_hash :prefectures_id
+- belongs_to_active_hash :aim_id
 
 
 ## shipping-addresses テーブル
