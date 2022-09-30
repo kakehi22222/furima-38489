@@ -31,6 +31,7 @@ Things you may want to cover:
 | ------------------- | ------- | ------------------------- |
 | nickname            | string  | null: false               |
 | email               | string  | null: false, unique: true |
+| encrypted_password  | string  | null: false               |
 | first-name          | string  | null: false               |
 | last-name           | string  | null: false               |
 | first-name-japanese | string  | null: false               |
@@ -42,7 +43,6 @@ Things you may want to cover:
 
 - has_many :items
 - has_many :purchases
-- has_one :shipping-address
 
 
 ## items テーブル
@@ -76,15 +76,13 @@ Things you may want to cover:
 | post-code        | string     | null: false                    |
 | prefectures_id   | integer    | null: false                    |
 | municipality     | string     | null: false                    |
-| house-number     | text       | null: false                    |
+| house-number     | string     | null: false                    |
 | building-name    | text       |                                |
 | phone-number     | string     | null: false                    |
 | user             | references | null: false, foreign_key: true |
 
 ### Association
-- belongs_to :user
 - belongs_to :purchase
-- belongs_to_active_hash :prefectures_id
 
 
 ## purchases テーブル
