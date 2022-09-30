@@ -50,6 +50,7 @@ Things you may want to cover:
 | Column         | Type       | Options                         |
 | -------------- | ---------- | ------------------------------- |
 | goods          | string     | null: false                     |
+| information    | text       | null: false                     |
 | price          | integer    | null: false                     |
 | category_id    | integer    | null: false                     |
 | condition_id   | integer    | null: false                     |
@@ -79,7 +80,6 @@ Things you may want to cover:
 | house_number     | string     | null: false                    |
 | building_name    | text       |                                |
 | phone_number     | string     | null: false                    |
-| user             | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :purchase
