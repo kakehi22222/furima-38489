@@ -32,10 +32,10 @@ Things you may want to cover:
 | nickname            | string  | null: false               |
 | email               | string  | null: false, unique: true |
 | encrypted_password  | string  | null: false               |
-| first-name          | string  | null: false               |
-| last-name           | string  | null: false               |
-| first-name-japanese | string  | null: false               |
-| last-name-japanese  | string  | null: false               |
+| first_name          | string  | null: false               |
+| last_name           | string  | null: false               |
+| first_name_japanese | string  | null: false               |
+| last_name_japanese  | string  | null: false               |
 | birthday            | date    | null: false               |
 
 
@@ -53,7 +53,7 @@ Things you may want to cover:
 | price          | integer    | null: false                     |
 | category_id    | integer    | null: false                     |
 | condition_id   | integer    | null: false                     |
-| cost-burden_id | integer    | null: false                     |
+| cost_burden_id | integer    | null: false                     |
 | prefectures_id | integer    | null: false                     |
 | aim_id         | integer    | null: false                     |
 | user           | references | null: false, foreign_key: true  |
@@ -64,21 +64,21 @@ Things you may want to cover:
 - has_one :purchase
 - belongs_to_active_hash :category_id
 - belongs_to_active_hash :condition_id
-- belongs_to_active_hash :cost-burden_id
+- belongs_to_active_hash :cost_burden_id
 - belongs_to_active_hash :prefectures_id
 - belongs_to_active_hash :aim_id
 
 
-## shipping-addresses テーブル
+## shipping_addresses テーブル
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
-| post-code        | string     | null: false                    |
+| post_code        | string     | null: false                    |
 | prefectures_id   | integer    | null: false                    |
 | municipality     | string     | null: false                    |
-| house-number     | string     | null: false                    |
-| building-name    | text       |                                |
-| phone-number     | string     | null: false                    |
+| house_number     | string     | null: false                    |
+| building_name    | text       |                                |
+| phone_number     | string     | null: false                    |
 | user             | references | null: false, foreign_key: true |
 
 ### Association
@@ -89,9 +89,10 @@ Things you may want to cover:
 
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
-| mark          | integer    | null: false                    |
 | user          | references | null: false, foreign_key: true |
 | item          | references | null: false, foreign_key: true |
 
 ### Association
-- has_one :shipping-address
+- belongs_to :user
+- belongs_to :item
+- has_one :shipping_address
