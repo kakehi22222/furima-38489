@@ -9,7 +9,7 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.integer :cost_burden_id,null: false
       t.integer :prefectures_id,null: false
       t.integer :aim_id,null: false, foreign_key: true
-      t.references :user,
+      t.references :user
       t.timestamps
     end
   end

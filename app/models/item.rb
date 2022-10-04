@@ -9,11 +9,12 @@ validates :prefectures_id, presence: true
 validates :aim_id
 
 belongs_to :user
+has_one_attached :image
 # has_one :purchase
-belongs_to_active_hash :category_id
-belongs_to_active_hash :condition_id
-belongs_to_active_hash :cost_burden_id
-belongs_to_active_hash :prefectures_id
-belongs_to_active_hash :aim_id
+# belongs_to_active_hash :category_id
+# belongs_to_active_hash :condition_id
+# belongs_to_active_hash :cost_burden_id
+# belongs_to_active_hash :prefectures_id
+# belongs_to_active_hash :aim_id
 
 end
