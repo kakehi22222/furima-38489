@@ -49,9 +49,9 @@ Things you may want to cover:
 
 | Column         | Type       | Options                         |
 | -------------- | ---------- | ------------------------------- |
-| goods          | string     | null: false                     |
-| information    | text       | null: false                     |
-| price          | integer    | null: false                     |
+| item_name      | string     | null: false                     |
+| item_info      | text       | null: false                     |
+| item_price     | integer    | null: false                     |
 | category_id    | integer    | null: false                     |
 | condition_id   | integer    | null: false                     |
 | cost_burden_id | integer    | null: false                     |
