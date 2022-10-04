@@ -1,9 +1,9 @@
 class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
 
-  validates :goods, presence: true, unless: :was_attached?
-  validates :information, presence: true
-  validates :price, presence: true, numericality: {greater_than_or_equal_to: 300,less_than_or_equal_to: 9999999},format:{with: /\A[0-9]+\z/}
+  validates :item_name, presence: true, unless: :was_attached?
+  validates :item_info, presence: true
+  validates :item_price, presence: true, numericality: {greater_than_or_equal_to: 300,less_than_or_equal_to: 9999999},format:{with: /\A[0-9]+\z/}
   validates :category_id, presence: true
   validates :condition_id, presence: true
   validates :cost_burden_id, presence: true
