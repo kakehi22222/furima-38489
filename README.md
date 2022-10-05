@@ -49,9 +49,9 @@ Things you may want to cover:
 
 | Column         | Type       | Options                         |
 | -------------- | ---------- | ------------------------------- |
-| goods          | string     | null: false                     |
-| information    | text       | null: false                     |
-| price          | integer    | null: false                     |
+| item_name      | string     | null: false                     |
+| item_info      | text       | null: false                     |
+| item_price     | integer    | null: false                     |
 | category_id    | integer    | null: false                     |
 | condition_id   | integer    | null: false                     |
 | cost_burden_id | integer    | null: false                     |
@@ -63,11 +63,11 @@ Things you may want to cover:
 
 - belongs_to :user
 - has_one :purchase
-- belongs_to_active_hash :category_id
-- belongs_to_active_hash :condition_id
-- belongs_to_active_hash :cost_burden_id
-- belongs_to_active_hash :prefectures_id
-- belongs_to_active_hash :aim_id
+- belongs_to_active_hash :category
+- belongs_to_active_hash :condition
+- belongs_to_active_hash :cost_burden
+- belongs_to_active_hash :prefectures
+- belongs_to_active_hash :aim
 
 
 ## shipping_addresses テーブル
