@@ -35,17 +35,17 @@ RSpec.describe Item, type: :model do
       it '価格に半角数字以外が含まれている場合は出品できない' do
         @item.item_price = 'aaa'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Item price is not a number")
+        expect(@item.errors.full_messages).to include('Item price is not a number')
       end
       it '価格が300円未満では出品できない' do
         @item.item_price = 299
         @item.valid?
-        expect(@item.errors.full_messages).to include("Item price must be greater than or equal to 300")
+        expect(@item.errors.full_messages).to include('Item price must be greater than or equal to 300')
       end
       it '価格が9_999_999円を超えると出品できない' do
-        @item.item_price = 10000000
+        @item.item_price = 10_000_000
         @item.valid?
-        expect(@item.errors.full_messages).to include("Item price must be less than or equal to 9999999")
+        expect(@item.errors.full_messages).to include('Item price must be less than or equal to 9999999')
       end
       it 'category_idが1だと保存できない' do
         @item.category_id = 1
