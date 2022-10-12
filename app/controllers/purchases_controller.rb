@@ -3,12 +3,10 @@ class PurchasesController < ApplicationController
   before_action :purchase_guard, only: [:index, :create]
 
   def index
-    @item = Item.find(params[:item_id])
     @purchase_shipping_address = PurchaseShippingAddress.new
   end
 
   def create
-    @item = Item.find(params[:item_id])
     @purchase_shipping_address = PurchaseShippingAddress.new(purchase_params)
     if @purchase_shipping_address.valid?
       pay_item

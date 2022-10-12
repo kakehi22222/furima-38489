@@ -56,6 +56,16 @@ RSpec.describe PurchaseShippingAddress, type: :model do
         @purchase_shipping_address.valid?
         expect(@purchase_shipping_address.errors.full_messages).to include('Phone number is invalid')
       end
+      it 'phone_numberが9桁だと保存できないこと' do
+        @purchase_shipping_address.phone_number = '090123456'
+        @purchase_shipping_address.valid?
+        expect(@purchase_shipping_address.errors.full_messages).to include("Phone number is invalid")
+      end
+      it 'phone_numberが12桁だと保存できないこと' do
+        @purchase_shipping_address.phone_number = '090123456789'
+        @purchase_shipping_address.valid?
+        expect(@purchase_shipping_address.errors.full_messages).to include("Phone number is invalid")
+      end
       it 'tokenが空だと保存できないこと' do
         @purchase_shipping_address.token = ''
         @purchase_shipping_address.valid?
