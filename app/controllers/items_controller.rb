@@ -2,7 +2,6 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
   before_action :set_item, only: [:edit, :show, :update, :destroy]
   before_action :access_guard, only: [:edit, :destroy]
-  before_action :purchase_guard, only: [:edit, :destroy]
 
   def index
     @items = Item.includes(:user).order(created_at: 'DESC')
@@ -52,10 +51,6 @@ class ItemsController < ApplicationController
   end
 
   def access_guard
-    redirect_to :index unless current_user.id == @item.user_id
-  end
-
-  def purchase_guard
-    redirect_to root_path if @item.purchase.present?
+    redirect_to action: :index unless current_user.id == @item.user_id
   end
 end
