@@ -1,6 +1,6 @@
 class PurchasesController < ApplicationController
-  before_action :authenticate_user!, only: [:index, :create ]
-  before_action :purchase_guard,only: [:index, :create]
+  before_action :authenticate_user!, only: [:index, :create]
+  before_action :purchase_guard, only: [:index, :create]
 
   def index
     @item = Item.find(params[:item_id])
@@ -22,14 +22,16 @@ class PurchasesController < ApplicationController
   private
 
   def purchase_params
-    params.require(:purchase_shipping_address).permit(:post_code, :prefectures_id, :municipality, :house_number, :building_name, :phone_number).merge(item_id: @item.id, user_id: current_user.id, token: params[:token])
+    params.require(:purchase_shipping_address).permit(:post_code, :prefectures_id, :municipality, :house_number, :building_name, :phone_number).merge(
+      item_id: @item.id, user_id: current_user.id, token: params[:token]
+    )
   end
 
   def pay_item
-    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+    Payjp.api_key = ENV['PAYJP_SECRET_KEY']
     Payjp::Charge.create(
       amount: @item.item_price,  # 商品の値段
-      card: purchase_params[:token],    # カードトークン
+      card: purchase_params[:token], # カードトークン
       currency: 'jpy'                 # 通貨の種類（日本円）
     )
   end

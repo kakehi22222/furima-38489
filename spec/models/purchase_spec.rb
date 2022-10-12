@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Purchase, type: :model do
   # before do
-    # item = FactoryBot.create(:item)
+  # item = FactoryBot.create(:item)
   #   @purchase = FactoryBot.build(:purchase)
   # end
 
