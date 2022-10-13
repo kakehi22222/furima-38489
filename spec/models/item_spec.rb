@@ -50,27 +50,27 @@ RSpec.describe Item, type: :model do
       it 'category_idが1だと保存できない' do
         @item.category_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Category can't be blank")
+        expect(@item.errors.full_messages).to include("Category を入力してください")
       end
       it 'condition_idが1だと保存できない' do
         @item.condition_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Condition can't be blank")
+        expect(@item.errors.full_messages).to include("Condition を入力してください")
       end
       it 'cost_burden_idが1だと保存できない' do
         @item.cost_burden_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Cost burden can't be blank")
+        expect(@item.errors.full_messages).to include("Cost burden を入力してください")
       end
       it 'prefectures_idが1だと保存できない' do
         @item.prefectures_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Prefectures can't be blank")
+        expect(@item.errors.full_messages).to include("Prefectures を入力してください")
       end
       it 'aim_idが1だと保存できない' do
         @item.aim_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Aim can't be blank")
+        expect(@item.errors.full_messages).to include("Aim を入力してください")
       end
       it 'userが紐付いていなければ出品できない' do
         @item.user = nil
