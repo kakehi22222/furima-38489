@@ -4,7 +4,7 @@ class PurchaseShippingAddress
                 :item_id
 
   validates :token, presence: true
-  validates :prefectures_id, numericality: { other_than: 1, message: "を入力してください" }
+  validates :prefectures_id, numericality: { other_than: 1, message: 'を入力してください' }
 
   with_options presence: true do
     validates :user_id

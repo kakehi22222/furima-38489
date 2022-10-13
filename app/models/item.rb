@@ -4,7 +4,7 @@ class Item < ApplicationRecord
   validates :image, presence: true
   validates :item_name, presence: true
   validates :item_info, presence: true
-  with_options presence: true, numericality: { other_than: 1, message: "を入力してください" } do
+  with_options presence: true, numericality: { other_than: 1, message: 'を入力してください' } do
     validates :category_id
     validates :condition_id
     validates :cost_burden_id
